@@ -11,7 +11,7 @@ CSS links:
  
 JavaScript:
 ```
-<script src = "mycontrol.js"></script> // Main angular code.
+<script src = "mycontrol.js"></script> // Main angular code. (Widget_Server/public/mycontrol.js)
 <script src="angular.min.js"></script>
 <script src="socket.io-1.4.5.js"></script>
 ```
