@@ -6,7 +6,7 @@ This chat widget can be embedded into a website by including the following:
 CSS links: 
 ```
  <link href="bootstrap.min.css" rel="stylesheet"> 
- <link href="widget.css" rel="stylesheet>
+ <link href="widget.css" rel="stylesheet>  // CSS for the widget. (Widget_Server/public/widget.css)
  ```
  
 JavaScript:
