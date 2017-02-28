@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="chatAdmin">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"> -->
+    <link href="mycss.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="nav-side-menu">
+    <div class="brand">Brand</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+            <li>
+                <a href="#">
+                    <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                </a>
+            </li>
+            <li data-toggle="collapse" data-target="#products" class="collapsed active">
+                <a href="#"><i class="fa fa-gift fa-lg"></i> Active Chats</a>
+            </li>
+
+            <li data-toggle="collapse" data-target="#service" class="collapsed">
+                <a href="#"><i class="fa fa-globe fa-lg"></i> Profile</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container" id="main">
+    <div ng-controller="adminController">
+    <div class="row">
+        <div class="col-md-4">
+
+
+                <h3>CHAT</h3>
+            Live Chat
+                <table class="table table-striped table-bordered table-hover">
+
+                    <thead>
+
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat = "message in messages track by $index" ng-if="message.length"   ng-click="displayChat(message[0].code)">
+
+
+                        <td>
+                            <div class="media">
+                                <a href="#" class="pull-left">
+                                    <img src="Images/user.png" class="media-photo" height="65" width="65">
+                                </a>
+                                <div class="media-body">
+                                    <span class="media-meta pull-right"></span>
+                                    <h4 class="title">
+                                        {{message[0].username}}
+
+                                    </h4>
+                                    <p class="summary">{{message[0].message}}</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        <div class="col-md-push-4">
+            <p style="padding-top:65px;"></p>
+            <div id="chatBox" schroll-bottom="messages" class="panel">
+
+                <div class="panel-body">
+                <div ng-repeat ="msg in getMsg()| filter:notEmptyOrNull">
+                    <ul>
+                        <div id="Chat_text" ng-class="getName(msg)">
+                        {{msg.username}}: {{msg.message}}
+                        </div>
+                    </ul>
+                </div>
+
+
+
+
+
+                </div>
+
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter your message" ng-model="response" style="width: 355px;">
+
+                        <button class="btn btn-primary" type="button" ng-click="sendRes(response)">Send</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+</body>
+<script src="bower_components/angular/angular.min.js"></script>
+
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="adminController.js"></script>
+
+</html>

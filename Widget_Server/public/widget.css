@@ -1,0 +1,124 @@
+/*
+    widget.css ==> This is the CSS file for the widget and can be added to the third party dynamically by Angular directives or a link to this file can be provided by the third party.
+    CSS wrapped inside class chatWidget for preventing conflicts with CSS on the third party.
+*/
+
+.chatWidget .panel {
+    border: 0;
+}
+
+.chatWidget .panel-default {
+
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    bottom: 150px;
+    right: -300px;
+    overflow-x: hidden;
+    transition: 0.5s;
+    height: 430px;
+
+}
+
+.chatWidget img{
+    cursor: pointer;
+}
+.chatWidget .panel-default > .panel-heading {
+    height: 50px;
+    background: #333333 none;
+    color: white;
+
+}
+
+.chatWidget .panel-default > .panel-body {
+
+
+    background-image: url(http://serverAddress/static/img/chat.bg4.jpg);
+    min-height: 329px;
+    max-height: 329px;
+    overflow-y: scroll;
+
+
+}
+.chatWidget .wrap{
+    position: relative;
+}
+.chatWidget .messages {
+
+    background: white;
+    color: black;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: -20px;
+    margin-right: 0px;
+    border-radius: 15px 15px 15px 0px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.chatWidget .messages2 {
+    
+    background: #333333;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left:  0px;
+    margin-right: 0px;
+    border-radius: 15px 15px 0px 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.chatWidget .messages  time {
+    font-size: 11px;
+    color: #808080;
+}
+.chatWidget .messages2  time {
+    font-size: 11px;
+    color: #808080;
+}
+.chatWidget .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.chatWidget .sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.chatWidget .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.chatWidget #mybuttton {
+    background-color: #e5e5e5;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.chatWidget #Chat_text{
+    width: 200px;
+    word-wrap: break-word;
+
+}
+
+.chatWidget .align-center{
+    text-align: center;
+    padding: 10px;
+}
+.chatWidget .show {
+    right : 10px;
+}

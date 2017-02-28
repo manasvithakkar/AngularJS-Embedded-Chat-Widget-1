@@ -1,0 +1,38 @@
+
+<img id="image"src="img/chat_icon_newr.png" alt="HTML5 Icon" ng-click="toggleState()" style="position:fixed;bottom:100px;right:20px;width:55px;height: 55px;" ng-show="!state" />
+<img id="image1"src="img/cross.png" alt="HTML5 Icon" ng-click="toggleState()" style="position:fixed;bottom:100px;right:20px;width:55px;height:55px;" ng-show="state" />
+<div id="mySidenav" class="panel panel-default" sidebar-directive="state">
+    <div class="panel-heading">Chat</div>
+
+    <div class="panel-body">
+        <div ng-show="askuser">
+            <input type = "text" ng-model = "user" size ="35" placeholder="Enter Your Name*    " class="form-control">
+
+
+
+            <br><div class="align-center"><button id="mybuttton" style="text-align:center;font-family: 'Helvetica Neue', Helvetica, Arial, 'sans-serif';padding:05px" ng-click="hideThis()" >Start Chatting!</button></div></br>
+        </div>
+        <ul style="list-style: none;">
+
+            <li ng-repeat="message in messages track by $index">
+                <div class="wrap">
+                    <div id="Chat_text" ng-class="getName(message)">
+                     <!-- {{message.username}}:<br \> -->{{message.message}}
+
+                        <time>{{date | date:'mediumTime'}}</time>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="panel-footer">
+        <div class="input-group">
+            <input id="btn-input" type="text" class="form-control input-sm chat_input" ng-model="newMessage" placeholder="Write your message here..." ng-disabled="askuser" />
+            <span class="input-group-btn">
+                    <button class="btn btn-sm" id="btn-chat" ng-click="sendMessage()" ng-disabled="askuser">Send</button>
+            </span>
+        </div>
+    </div>
+</div>
