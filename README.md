@@ -1,5 +1,5 @@
 # AngularJS-Embedded-Chat-Widget
-Embed this chat widget into any website by including the following:
+This chat widget can be embedded into a website by including the following:
 
 (Will add Angular directives for adding the CSS links and script tags dynamically in the next commit.)
 
